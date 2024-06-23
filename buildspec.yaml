@@ -5,6 +5,7 @@ env:
     REGION: "ap-northeast-1"
     AWS_ACCOUNT_ID: "032356302957"
     REPOSITORY_NAME: "kazuki-ecr"
+    ECS_TASK_DEFINITION_ARN: ""
 
 phases:
   pre_build:
@@ -41,6 +42,10 @@ phases:
       # ImageDetail.jsonを作成する
       - echo Writing image details to imageDetail.json...
       - printf '{"ImageURI":"${REPOSITORY_URI:IMAGE_TAG}"}' > imageDetail.json
+
+
+      #aa
+      - $(aws ecs describe-task-definition --task-definition ${ECS_TASK_DEFINITION_ARN} --query taskDefinition | jq '.containerDefinitions[0].image="<IMAGE1_NAME>"' > taskdef.json)
 artifacts:
   files:
    - imageDetail.json
