@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       # ECRにログインをする
-      - echo "ECRにログインします...."
+      - echo "${REGION} ${AWS_ACCOUNT_ID} ${REPOSITORY_NAME}"
       - aws --version
       - $(aws ecr get-login-password --region ${REGION}) | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
       # RepositoryのURLを環境変数として一時作成しておく。
