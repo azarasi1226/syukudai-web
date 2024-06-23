@@ -12,7 +12,7 @@ phases:
       # ECRにログインをする
       - echo "${REGION} ${AWS_ACCOUNT_ID} ${REPOSITORY_NAME}"
       - aws --version
-      - $(aws ecr get-login-password --region ${REGION}) | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
+      - aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
       # RepositoryのURLを環境変数として一時作成しておく。
       - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY_NAME}
       # Commitのハッシュ番号を取る
