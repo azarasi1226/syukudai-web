@@ -41,7 +41,7 @@ phases:
 
       # ImageDetail.jsonを作成する
       - echo Writing image details to imageDetail.json...
-      - printf '{"ImageURI":"${REPOSITORY_URI:IMAGE_TAG}"}' > imageDetail.json
+      - printf '{"ImageURI":"${REPOSITORY_URI}:${IMAGE_TAG}"}' > imageDetail.json
       - cat imageDetail.json
 
 
