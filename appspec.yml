@@ -5,5 +5,5 @@ Resources:
       Properties:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
-          ContainerName: "kazuki-ecs-sample"
+          ContainerName: kazuki-ecs-sample
           ContainerPort: 80
