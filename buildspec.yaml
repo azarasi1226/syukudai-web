@@ -5,7 +5,7 @@ env:
     REGION: "ap-northeast-1"
     AWS_ACCOUNT_ID: "032356302957"
     REPOSITORY_NAME: "kazuki-ecr"
-    ECS_TASK_DEFINITION_ARN: ""
+    ECS_TASK_DEFINITION_ARN: "arn:aws:ecs:ap-northeast-1:032356302957:task-definition/kazuki-task"
 
 phases:
   pre_build:
