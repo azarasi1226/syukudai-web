@@ -1,9 +1,9 @@
-version: 0.0
+version: 1
 Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
-            ContainerName: "kazuki-ecs-sample"
-            ContainerPort: "80"
+          ContainerName: "kazuki-ecs-sample"
+          ContainerPort: 80
